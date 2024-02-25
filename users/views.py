@@ -91,3 +91,12 @@ def profile(request):
         template_name='users/profile.html',
         context=context
     )
+
+
+def logout(request):
+    auth.logout(
+        request=request
+    )
+    return HttpResponseRedirect(
+        reverse('index')
+    )
